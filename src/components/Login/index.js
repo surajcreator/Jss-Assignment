@@ -3,14 +3,17 @@ import { withSitecoreContext } from '@sitecore-jss/sitecore-jss-react';
 import Input from '../React/Input/Input';
 import { filterObject } from '../../common/common';
 import { useForm } from 'react-hook-form';
+import { withTranslation } from 'react-i18next';
 
 const Login = (props) => {
+  const { t } = props;
   const { title, formFields } = props.sitecoreContext.route.fields;
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  console.log('t', t && t('Reg'));
   return (
     <section className="vh-100">
       <div className="container-fluid h-custom">
@@ -64,7 +67,7 @@ const Login = (props) => {
 
               <div className="text-lg-start mt-4 pt-2">
                 <button type="submit" className="btn btn-primary btn-lg">
-                  Login
+                  {t('LoginButton')}
                 </button>
               </div>
             </form>
@@ -75,4 +78,4 @@ const Login = (props) => {
   );
 };
 
-export default withSitecoreContext()(Login);
+export default withTranslation()(withSitecoreContext()(Login));
