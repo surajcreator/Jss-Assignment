@@ -16,6 +16,7 @@ const Input = ({
   input,
   error,
 }) => {
+  console.log('reqMsg', reqMsg);
   return (
     <div className="form-outline mb-4">
       <label className="form-label" htmlFor={id}>
