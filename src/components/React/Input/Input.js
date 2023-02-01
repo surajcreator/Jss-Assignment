@@ -26,6 +26,7 @@ const Input = ({
         {...input}
         {...register(targetElement, {
           required: reqMsg,
+          pattern: { value: regex, message: regexMsg },
         })}
         type={inputType}
         id={id}
@@ -35,7 +36,8 @@ const Input = ({
       />
       {error?.hasOwnProperty(targetElement) && (
         <p className="text text-danger">
-          {error[targetElement]?.message.replace('{0}', `${title?.toLowerCase()} `)}
+          {error[targetElement]?.message &&
+            error[targetElement]?.message.replace('{0}', `${title?.toLowerCase()} `)}
         </p>
       )}
     </div>
