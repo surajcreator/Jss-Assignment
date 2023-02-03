@@ -6,7 +6,9 @@
   "config": {
     "appName": "ecom-app",
     "rootPlaceholders": [
-      "jss-main"
+      "jss-main",
+      "jss-left-column",
+      "jss-right-column"
     ],
     "sitecoreDistPath": "/dist/ecom-app",
     "sitecoreConfigPath": "/App_Config/Include/zzz",

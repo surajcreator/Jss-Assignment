@@ -1,7 +1,5 @@
 import React from 'react';
 import { Placeholder, VisitorIdentification } from '@sitecore-jss/sitecore-jss-react';
-import { NavLink } from 'react-router-dom';
-import { withTranslation } from 'react-i18next';
 import deepEqual from 'deep-equal';
 import Helmet from 'react-helmet';
 
@@ -9,7 +7,6 @@ import Helmet from 'react-helmet';
 // without needing extra CSS in the sample app. Remove it in package.json as well if it's removed here.
 import 'bootstrap/dist/css/bootstrap.css';
 import './assets/app.scss';
-import logo from './assets/sc_logo.svg';
 
 /*
   APP LAYOUT
@@ -38,7 +35,7 @@ const Layout = ({ route }) => (
     <VisitorIdentification />
 
     {/* root placeholder for the app, which we add components to using route data */}
-    <div className="container">
+    <div className="container-fluid">
       <Placeholder name="jss-main" rendering={route} />
     </div>
   </React.Fragment>

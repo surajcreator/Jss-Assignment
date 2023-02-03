@@ -18,7 +18,7 @@ const Input = ({
 }) => {
   console.log('reqMsg', reqMsg);
   return (
-    <div className="form-outline mb-4">
+    <div className={`form-outline mb-4 ${error[targetElement]?.message ? 'input-error' : ''}`}>
       <label className="form-label" htmlFor={id}>
         {title}
       </label>
